@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title><%= htmlWebpackPlugin.options.title %></title>
+    <link href="./style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/5c716d0627.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+  </head>
+  <body>
+    <noscript>
+      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+    </noscript>
+    <div id="app"></div>
+    <script>
+      const toggleSideMenu = () => {
+          const overlay = document.getElementById('side-menu-overlay')
+          const sidemenu = document.getElementById('side-menu')
+
+          overlay.classList.toggle('d-none')
+          sidemenu.classList.toggle('active')
+      }
+
+      const toggleSearchModal = () => {
+          const element = document.getElementById('search-modal')
+          element.classList.toggle('d-none')
+      }
+
+      const toggleLoginModal = () => {
+          const element = document.getElementById('login-modal')
+          element.classList.toggle('d-none')
+      }
+      const dropdownToggle = (e) => {
+          e.lastElementChild.classList.toggle('show')
+      }
+
+      const toggleInquiryModal = () => {
+          const element = document.getElementById('quick-inquiry-modal')
+          element.classList.toggle('d-none')
+      }
+
+      let loginModalState = true
+
+      const changeLoginTabs = (e) => {
+          const loginTabs = document.getElementsByClassName('login-tabs')[0]
+          for (let index = 0; index < loginTabs.childElementCount; index++) {
+              const element = loginTabs.children[index];
+              if (element.classList.contains('active')) {
+                  element.classList.remove('active')
+              }
+          }
+
+          if (!e.classList.contains('active')) {
+              e.classList.add('active')
+          }
+
+          if (loginModalState) {
+              document.getElementById('cpassword').classList.remove('d-none')
+              document.getElementById('remember-radio').classList.add('d-none')
+              document.getElementById('lost-password').classList.add('d-none')
+              document.getElementById('sign-in').classList.add('d-none')
+              document.getElementById('sign-up').classList.remove('d-none')
+              document.getElementById('email').classList.remove('d-none')
+              document.getElementById('country').classList.remove('d-none')
+              document.getElementById('uname').classList.add('d-none')
+              document.getElementById('fname').classList.remove('d-none')
+              loginModalState = false
+          } else {
+              document.getElementById('cpassword').classList.add('d-none')
+              document.getElementById('remember-radio').classList.remove('d-none')
+              document.getElementById('lost-password').classList.remove('d-none')
+              document.getElementById('sign-in').classList.remove('d-none')
+              document.getElementById('sign-up').classList.add('d-none')
+              document.getElementById('email').classList.add('d-none')
+              document.getElementById('country').classList.add('d-none')
+              document.getElementById('uname').classList.remove('d-none')
+              document.getElementById('fname').classList.add('d-none')
+              loginModalState = true
+          }
+      }
+  </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
+    <!-- built files will be auto injected -->
+  </body>
+</html>
