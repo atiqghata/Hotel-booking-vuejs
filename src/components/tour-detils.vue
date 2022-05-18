@@ -1975,6 +1975,7 @@
 <script>
 import navbarComponent from './layouts/navbar.vue'
 import footerComponent from './layouts/footer.vue'
+// import { onMounted } from '@vue/runtime-core'
 export default {
   name: 'TourDetails',
   components:{
