@@ -42,7 +42,7 @@
                         </div>
                     </div>
                     <div class="text-end px-5 mb-4">
-                        <button class="next-button" onclick="changeTab('step-2', 'step-1')">
+                        <button class="next-button" @click="changeTab('step-2', 'step-1')">
                             Next
                         </button>
                     </div>
@@ -98,10 +98,10 @@
                         </div>
                     </div>
                     <div class="d-flex justify-content-between align-items-center px-5 mb-4">
-                        <button class="back-button" onclick="changeTab('step-1', 'step-2')">
+                        <button class="back-button" @click="changeTab('step-1', 'step-2')">
                             Back
                         </button>
-                        <button class="next-button" onclick="changeTab('step-3', 'step-2')">
+                        <button class="next-button" @click="changeTab('step-3', 'step-2')">
                             Next
                         </button>
                     </div>
@@ -148,10 +148,10 @@
                         </textarea>
                     </div>
                     <div class="d-flex justify-content-between align-items-center px-5 mb-4">
-                        <button class="back-button" onclick="changeTab('step-2', 'step-3')">
+                        <button class="back-button" @click="changeTab('step-2', 'step-3')">
                             Back
                         </button>
-                        <button class="next-button" onclick="changeTab('step-4', 'step-3')">
+                        <button class="next-button" @click="changeTab('step-4', 'step-3')">
                             Next
                         </button>
                     </div>
@@ -190,10 +190,10 @@
                         <input type="text" class="mb-3 form-control w-100 " placeholder="Country" />
                     </div>
                     <div class="d-flex justify-content-between align-items-center px-5 mb-4">
-                        <button class="back-button" onclick="changeTab('step-3', 'step-4')">
+                        <button class="back-button" @click="changeTab('step-3', 'step-4')">
                             Back
                         </button>
-                        <button class="next-button" onclick="toggleModal()">
+                        <button class="next-button" @click="toggleModal()">
                             Submit
                         </button>
                     </div>
@@ -208,7 +208,7 @@
                 <div class="col-12 p-0">
                     <div class="proceed-booking-header">
                         <h6 class="fw-bolder m-0">PROCEED BOOKING</h6>
-                        <i class="bi bi-x-lg" onclick="toggleProceedBookingModal()" aria-hidden="true"></i>
+                        <i class="bi bi-x-lg" @click="toggleProceedBookingModal()" aria-hidden="true"></i>
                     </div>
                 </div>
                 <div class="col-6 p-0 pb-4">
@@ -225,7 +225,7 @@
                                 <input type="password" class="form-control" name="password" id="password"
                                     aria-describedby="helpId" placeholder="">
                             </div>
-                            <button class="mb-4" onclick="window.location.href= './booking.html'">SIGN
+                            <button class="mb-4" @click="window.location.href= './booking.html'">SIGN
                                 IN</button>
                             <a href="#" class="text-decoration-none d-block primarycolor">Forget Password?</a>
                         </div>
@@ -238,10 +238,10 @@
                             payment
                             status, track the
                             confirmation and you can also rate the tour after you finished the tour.</small>
-                        <button class="w-100 mb-4" onclick="window.location.href= './booking.html'">SIGN
+                        <button class="w-100 mb-4" @click="window.location.href= './booking.html'">SIGN
                             UP</button>
                         <h6 class="fw-bolder mb-3">Or Continue As Guest</h6>
-                        <button class="w-100 mb-4" onclick="window.location.href= './booking.html'">CONTINUE AS
+                        <button class="w-100 mb-4" @click="window.location.href= './booking.html'">CONTINUE AS
                             GUEST</button>
                     </div>
                 </div>
@@ -254,7 +254,7 @@
                 <div class="col-12 p-0">
                     <div class="proceed-booking-header">
                         <h6 class="fw-bolder m-0">QUICK INQUIRY</h6>
-                        <i class="bi bi-x-lg" onclick="toggleInquiryModal()" aria-hidden="true"></i>
+                        <i class="bi bi-x-lg" @click="toggleInquiryModal()" aria-hidden="true"></i>
                     </div>
                 </div>
                 <div class="col-12 p-0">
@@ -279,7 +279,7 @@
                                 <label class="form-label">Notes</label>
                                 <textarea class="form-control"></textarea>
                             </div>
-                            <button class="mb-3" onclick="toggleInquiryModal()">Submit</button>
+                            <button class="mb-3" @click="toggleInquiryModal()">Submit</button>
                         </div>
                     </div>
                 </div>
@@ -436,7 +436,7 @@
                             </div>
                         </li>
                         <li class="nav-item nav-button" role="presentation">
-                            <button onclick="toggleProceedBookingModal()"> Book Now</button>
+                            <button @click="toggleProceedBookingModal()"> Book Now</button>
                         </li>
                     </ul>
 
@@ -1352,7 +1352,7 @@
                                                 alt="" />FAQ
                                         </div>
                                         <div>
-                                            <button onclick="expandAll(this)">Expand All</button>
+                                            <button @click="expandAll(this)">Expand All</button>
                                         </div>
                                     </div>
                                     <div class="siderbar-box-body p-4">
@@ -1486,8 +1486,8 @@
                         <div class="sidebar-box bg-white section-border mb-5">
                             <div class="sidebar-box-heading fs-5 p-4">Need help booking ?</div>
                             <div class="siderbar-box-body p-4 px-5">
-                                <button class="inquiry-button" onclick="toggleInquiryModal()">Quick Inquiry</button>
-                                <button class="inquiry-button mt-3" onclick="toggleModal()">Customize Your Trip</button>
+                                <button class="inquiry-button" @click="toggleInquiryModal()">Quick Inquiry</button>
+                                <button class="inquiry-button mt-3" @click="toggleModal()">Customize Your Trip</button>
                             </div>
                         </div>
                         <div class="sidebar-box bg-white section-border mb-5">
@@ -1975,13 +1975,164 @@
 <script>
 import navbarComponent from './layouts/navbar.vue'
 import footerComponent from './layouts/footer.vue'
-// import { onMounted } from '@vue/runtime-core'
 export default {
   name: 'TourDetails',
   components:{
       navbarComponent,
       footerComponent
-  }
+  },
+  updated(){
+   const sections = document.querySelectorAll("section");
+    const navLi = document.querySelectorAll(".tour-details-nav li");
+       window.onscroll = () => {
+            var current = "";
+
+            sections.forEach((section) => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 120) {
+                    current = section.getAttribute("id");
+                }
+            });
+
+            navLi.forEach((li) => {
+                const child = li.children[0]
+                child.classList.remove("active");
+                if (child.classList.contains(current)) {
+                    child.classList.add("active");
+                }
+            });
+
+            this.myFunction()
+        };
+  },
+  computed(){
+
+   // var navbar = document.getElementById("navbar");
+    // Get the offset position of the navbar
+    // var sticky = navbar.offsetTop;
+    const sections = document.querySelectorAll("section");
+    const navLi = document.querySelectorAll(".tour-details-nav li");
+       window.onscroll = () => {
+            var current = "";
+
+            sections.forEach((section) => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 120) {
+                    current = section.getAttribute("id");
+                }
+            });
+
+            navLi.forEach((li) => {
+                const child = li.children[0]
+                child.classList.remove("active");
+                if (child.classList.contains(current)) {
+                    child.classList.add("active");
+                }
+            });
+
+            this.myFunction()
+        };
+
+  },
+  mounted(){
+    // var navbar = document.getElementById("navbar");
+    // Get the offset position of the navbar
+    // var sticky = navbar.offsetTop;
+    const sections = document.querySelectorAll("section");
+    const navLi = document.querySelectorAll(".tour-details-nav li");
+       window.onscroll = () => {
+            var current = "";
+
+            sections.forEach((section) => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 120) {
+                    current = section.getAttribute("id");
+                }
+            });
+
+            navLi.forEach((li) => {
+                const child = li.children[0]
+                child.classList.remove("active");
+                if (child.classList.contains(current)) {
+                    child.classList.add("active");
+                }
+            });
+
+            this.myFunction()
+        };
+  },
+  methods:{
+        myFunction: function() {
+                var navbar = document.getElementById("navbar");
+    // Get the offset position of the navbar
+    var sticky = navbar.offsetTop;
+            if (pageYOffset >= sticky) {
+                navbar.classList.add("sticky")
+            } else {
+                navbar.classList.remove("sticky");
+            }
+        },
+
+        toggleSideMenu:function() {
+            const overlay = document.getElementById('side-menu-overlay')
+            const sidemenu = document.getElementById('side-menu')
+
+            overlay.classList.toggle('d-none')
+            sidemenu.classList.toggle('active')
+        },
+
+        toggleSearchModal:function() {
+            const element = document.getElementById('search-modal')
+            element.classList.toggle('d-none')
+        },
+
+        toggleLoginModal:function() {
+            const element = document.getElementById('login-modal')
+            element.classList.toggle('d-none')
+        },
+
+        toggleDiscountModal:function() {
+            const element = document.getElementById('discount-modal')
+            element.classList.toggle('d-none')
+        },
+
+        toggleProceedBookingModal:function() {
+            const element = document.getElementById('proceed-booking-modal')
+            element.classList.toggle('d-none')
+        },
+
+        toggleInquiryModal: function () {
+            const element = document.getElementById('quick-inquiry-modal')
+            element.classList.toggle('d-none')
+        },
+
+        changeTab: function(step, prevStep) {
+            const element = document.getElementById(step);
+            const prevElement = document.getElementById(prevStep);
+            element.classList.toggle('active')
+            prevElement.classList.toggle('active')
+        },
+
+        toggleModal: function() {
+            const element = document.getElementById('tour-modal');
+            element.classList.toggle('d-none')
+            document.getElementById('step-1').classList.add('active')
+            document.getElementById('step-4').classList.remove('active')
+        },
+
+        toggleBookingModal:function(func) {
+            if (func) {
+                func()
+            }
+            const element = document.getElementById('booking-modal');
+            element.classList.toggle('d-none')
+            document.getElementById('details').classList.add('active')
+            document.getElementById('payment').classList.remove('active')
+            document.getElementById('payment-form').classList.remove('d-none')
+            document.getElementById('payment-form-2').classList.add('d-none')
+        }
+  },
+
 }
 </script>
 <style>

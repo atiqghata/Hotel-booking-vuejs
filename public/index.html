@@ -23,66 +23,9 @@
       <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
     <div id="app"></div>
-    <script src="../src/assets/dist/wheel-zoom.min.js"></script>
+    <!-- <script src="../src/assets/dist/wheel-zoom.min.js"></script> -->
     
-    <script type="text/javascript">
-
-setTimeout(() => {
-    
-
-
-        var frame = document.getElementById('myWindow');
-        var image = document.getElementById('myContent');
-        document.addEventListener('DOMContentLoaded', function () {
-            var wzoom = WZoom.create('#myContent', {
-                dragScrollableOptions: {
-                    onGrab: function () {
-                        frame.style.cursor = 'grabbing';
-                    },
-                    onDrop: function () {
-                        frame.style.cursor = 'grab';
-                    }
-                },
-                minScale: 1,
-                maxScale: 5,
-                speed: 3,
-                alignContent: 'top',
-                disableWheelZoom: true
-            });
-
-            window.addEventListener('resize', function () {
-                if (wzoom) wzoom.prepare();
-            });
-
-            document.querySelector('[data-zoom-up]').addEventListener('click', () => {
-                wzoom.zoomUp();
-            });
-
-            document.querySelector('[data-zoom-down]').addEventListener('click', () => {
-                wzoom.zoomDown();
-            });
-        })
-
-
-        const sections = document.querySelectorAll("section");
-        const navLi = document.querySelectorAll(".tour-details-nav li");
-
-
-        // Get the navbar
-        var navbar = document.getElementById("navbar");
-
-        // Get the offset position of the navbar
-        var sticky = navbar.offsetTop;
-
-        // Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
-        function myFunction() {
-            if (pageYOffset >= sticky) {
-                navbar.classList.add("sticky")
-            } else {
-                navbar.classList.remove("sticky");
-            }
-        }
-
+    <script>
         const toggleSideMenu = () => {
             const overlay = document.getElementById('side-menu-overlay')
             const sidemenu = document.getElementById('side-menu')
@@ -100,15 +43,8 @@ setTimeout(() => {
             const element = document.getElementById('login-modal')
             element.classList.toggle('d-none')
         }
-
-        const toggleDiscountModal = () => {
-            const element = document.getElementById('discount-modal')
-            element.classList.toggle('d-none')
-        }
-
-        const toggleProceedBookingModal = () => {
-            const element = document.getElementById('proceed-booking-modal')
-            element.classList.toggle('d-none')
+        const dropdownToggle = (e) => {
+            e.lastElementChild.classList.toggle('show')
         }
 
         const toggleInquiryModal = () => {
@@ -116,119 +52,8 @@ setTimeout(() => {
             element.classList.toggle('d-none')
         }
 
-        function changeTab(step, prevStep) {
-            const element = document.getElementById(step);
-            const prevElement = document.getElementById(prevStep);
-            element.classList.toggle('active')
-            prevElement.classList.toggle('active')
-        }
-
-        function toggleModal() {
-            const element = document.getElementById('tour-modal');
-            element.classList.toggle('d-none')
-            document.getElementById('step-1').classList.add('active')
-            document.getElementById('step-4').classList.remove('active')
-        }
-
-        // function toggleBookingModal(func) {
-        //     if (func) {
-        //         func()
-        //     }
-        //     const element = document.getElementById('booking-modal');
-        //     element.classList.toggle('d-none')
-        //     document.getElementById('details').classList.add('active')
-        //     document.getElementById('payment').classList.remove('active')
-        //     document.getElementById('payment-form').classList.remove('d-none')
-        //     document.getElementById('payment-form-2').classList.add('d-none')
-        // }
-
-        window.onscroll = () => {
-            var current = "";
-
-            sections.forEach((section) => {
-                const sectionTop = section.offsetTop;
-                if (pageYOffset >= sectionTop - 120) {
-                    current = section.getAttribute("id");
-                }
-            });
-
-            navLi.forEach((li) => {
-                const child = li.children[0]
-                child.classList.remove("active");
-                if (child.classList.contains(current)) {
-                    child.classList.add("active");
-                }
-            });
-
-            myFunction()
-        };
-
-        const dropdownToggle = (e) => {
-            e.lastElementChild.classList.toggle('show')
-        }
-
-        let accordionState = true
-
-        const expandAll = (e) => {
-            if (accordionState) {
-                const btnElement = document.getElementsByClassName('accordion-button')
-                const bodyElement = document.getElementsByClassName('accordion-collapse')
-                for (let index = 0; index < btnElement.length; index++) {
-                    const button = btnElement[index];
-                    if (button.classList.contains('collapsed')) {
-                        button.classList.remove('collapsed')
-                    }
-                }
-
-                for (let index = 0; index < bodyElement.length; index++) {
-                    const body = bodyElement[index];
-                    if (!body.classList.contains('show')) {
-                        body.classList.add('show')
-                    }
-                }
-                e.innerHTML = "Collapse"
-                accordionState = false
-            } else {
-                const btnElement = document.getElementsByClassName('accordion-button')
-                const bodyElement = document.getElementsByClassName('accordion-collapse')
-                for (let index = 0; index < btnElement.length; index++) {
-                    const button = btnElement[index];
-                    if (!button.classList.contains('collapsed')) {
-                        button.classList.add('collapsed')
-                    }
-                }
-
-                for (let index = 0; index < bodyElement.length; index++) {
-                    const body = bodyElement[index];
-                    if (body.classList.contains('show')) {
-                        body.classList.remove('show')
-                    }
-                }
-                e.innerHTML = "Expand All"
-                accordionState = true
-
-            }
-        }
-
-
-
-        // const showpaymentform = () => {
-        //     document.getElementById('payment-form').classList.add('d-none')
-        //     document.getElementById('payment-form-2').classList.remove('d-none')
-        // }
-
-        // window.onscroll = function () { myFunction() };
-
-        // const phoneInputField = document.querySelectorAll(".phone-field");
-        // for (let index = 0; index < phoneInputField.length; index++) {
-        //     const element = phoneInputField[index];
-        //     const phoneInput = window.intlTelInput(element, {
-        //         utilsScript:
-        //             "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
-        //     });
-        // }
-
         let loginModalState = true
+
         const changeLoginTabs = (e) => {
             const loginTabs = document.getElementsByClassName('login-tabs')[0]
             for (let index = 0; index < loginTabs.childElementCount; index++) {
@@ -266,7 +91,6 @@ setTimeout(() => {
                 loginModalState = true
             }
         }
-    }, 10000);
     </script>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>

@@ -1845,7 +1845,7 @@ export default {
   components:{
       navbarComponent,
       footerComponent
-  }
+  },
 }
 </script>
 <style>
